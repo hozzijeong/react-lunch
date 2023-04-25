@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Restaurant } from '../utils/interfaces';
 import { SelectorCategory, SelectorFilter } from '../utils/types';
 

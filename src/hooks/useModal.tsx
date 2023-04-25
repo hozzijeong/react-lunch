@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 function useModal<T>() {
   const modalRef = useRef<HTMLDialogElement>(null);
+  const bodyRef = useRef<HTMLBodyElement>(document.querySelector('body'));
   const [modalContent, setModalContent] = useState<T | null>(null);
 
   useEffect(() => {
@@ -9,9 +10,9 @@ function useModal<T>() {
 
     if (modalContent) {
       current?.showModal();
-      document.body.style.overflow = 'hidden';
+      bodyRef.current?.setAttribute('style', 'overflow:hidden');
     } else {
-      document.body.style.overflow = 'visible';
+      bodyRef.current?.setAttribute('style', 'overflow:visible');
       current?.close();
     }
   }, [modalContent]);

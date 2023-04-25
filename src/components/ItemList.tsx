@@ -30,9 +30,9 @@ function ItemList({ itemList }: Props) {
   return (
     <section className="restaurant-list-container">
       <ul className="restaurant-list" onClick={ulOnClickListener}>
-        {itemList.map(item => {
-          return <Item key={item.id} restaurant={item} />;
-        })}
+        {itemList.map(item => (
+          <Item key={item.id} restaurant={item} />
+        ))}
       </ul>
 
       <ModalPortal closeEvent={closeEvent} dialogRef={modalRef}>
